@@ -11,8 +11,12 @@ export default defineConfig({
     'Inverted teaching',
     'Flipped Classroom',
   ].join(' '),
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+  ],
   themeConfig: {
-    logo: '/logo.png',
+    siteTitle: 'Tapenote',
+    logo: '/favicon.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '文档', link: '/guide/doc/index' },
@@ -28,8 +32,24 @@ export default defineConfig({
 
     sidebar: [
       {
+        base: '/guide/intro',
+        text: '简介',
+        items: [
+          { text: '什么是笔记映画？', link: '/what' },
+        ]
+      },
+      {
         base: '/guide/doc',
         text: '文档',
+        items: [
+          { text: '开始', link: '/start' },
+          { text: '下载', link: '/download' },
+          { text: '配置', link: '/config' },
+        ]
+      },
+      {
+        base: '/guide/example',
+        text: '版本与计划',
         items: [
           { text: '开始', link: '/start' },
           { text: '下载', link: '/download' },
@@ -51,6 +71,10 @@ export default defineConfig({
         link: 'https://github.com/DbPtZn/tapenote' 
       },
       { icon: 'github', link: 'https://github.com/DbPtZn/tapenote' }
-    ]
-  }
+    ],
+    search: {
+      // 使用本地搜索
+      provider: 'local'
+    }
+  },
 })

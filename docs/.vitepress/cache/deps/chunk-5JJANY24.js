@@ -2315,21 +2315,21 @@ function renderComponentRoot(instance) {
     vnode,
     proxy,
     withProxy,
-    props,
     propsOptions: [propsOptions],
     slots,
     attrs,
     emit: emit2,
     render: render2,
     renderCache,
+    props,
     data,
     setupState,
     ctx,
     inheritAttrs
   } = instance;
+  const prev = setCurrentRenderingInstance(instance);
   let result;
   let fallthroughAttrs;
-  const prev = setCurrentRenderingInstance(instance);
   if (true) {
     accessedAttrs = false;
   }
@@ -2351,7 +2351,7 @@ function renderComponentRoot(instance) {
           thisProxy,
           proxyToUse,
           renderCache,
-          props,
+          true ? shallowReadonly(props) : props,
           setupState,
           data,
           ctx
@@ -2365,7 +2365,7 @@ function renderComponentRoot(instance) {
       }
       result = normalizeVNode(
         render22.length > 1 ? render22(
-          props,
+          true ? shallowReadonly(props) : props,
           true ? {
             get attrs() {
               markAttrsAccessed();
@@ -2375,9 +2375,8 @@ function renderComponentRoot(instance) {
             emit: emit2
           } : { attrs, slots, emit: emit2 }
         ) : render22(
-          props,
+          true ? shallowReadonly(props) : props,
           null
-          /* we know it doesn't need it */
         )
       );
       fallthroughAttrs = Component.props ? attrs : getFunctionalFallthrough(attrs);
@@ -3861,11 +3860,19 @@ function emptyPlaceholder(vnode) {
   }
 }
 function getKeepAliveChild(vnode) {
-  return isKeepAlive(vnode) ? (
-    // #7121 ensure get the child component subtree in case
-    // it's been replaced during HMR
-    vnode.component ? vnode.component.subTree : vnode.children ? vnode.children[0] : void 0
-  ) : vnode;
+  if (!isKeepAlive(vnode)) {
+    return vnode;
+  }
+  if (vnode.component) {
+    return vnode.component.subTree;
+  }
+  const { shapeFlag, children } = vnode;
+  if (shapeFlag & 16) {
+    return children[0];
+  }
+  if (shapeFlag & 32 && isFunction(children.default)) {
+    return children.default();
+  }
 }
 function setTransitionHooks(vnode, hooks) {
   if (vnode.shapeFlag & 6 && vnode.component) {
@@ -5919,22 +5926,17 @@ var normalizeVNodeSlots = (instance, children) => {
   instance.slots.default = () => normalized;
 };
 var initSlots = (instance, children) => {
+  const slots = instance.slots = createInternalObject();
   if (instance.vnode.shapeFlag & 32) {
     const type = children._;
     if (type) {
-      instance.slots = toRaw(children);
-      def(instance.slots, "_", type);
+      extend(slots, children);
+      def(slots, "_", type);
     } else {
-      normalizeObjectSlots(
-        children,
-        instance.slots = createInternalObject()
-      );
+      normalizeObjectSlots(children, slots);
     }
-  } else {
-    instance.slots = createInternalObject();
-    if (children) {
-      normalizeVNodeSlots(instance, children);
-    }
+  } else if (children) {
+    normalizeVNodeSlots(instance, children);
   }
 };
 var updateSlots = (instance, children, optimized) => {
@@ -9595,7 +9597,7 @@ function isMemoSame(cached, memo) {
   }
   return true;
 }
-var version = "3.4.23";
+var version = "3.4.24";
 var warn2 = true ? warn$1 : NOOP;
 var ErrorTypeStrings = ErrorTypeStrings$1;
 var devtools = true ? devtools$1 : void 0;
@@ -9799,8 +9801,8 @@ function resolveTransitionProps(rawProps) {
       el._isLeaving = true;
       const resolve2 = () => finishLeave(el, done);
       addTransitionClass(el, leaveFromClass);
-      forceReflow();
       addTransitionClass(el, leaveActiveClass);
+      forceReflow();
       nextFrame(() => {
         if (!el._isLeaving) {
           return;
@@ -11393,7 +11395,7 @@ export {
 
 @vue/shared/dist/shared.esm-bundler.js:
   (**
-  * @vue/shared v3.4.23
+  * @vue/shared v3.4.24
   * (c) 2018-present Yuxi (Evan) You and Vue contributors
   * @license MIT
   **)
@@ -11401,14 +11403,14 @@ export {
 
 @vue/reactivity/dist/reactivity.esm-bundler.js:
   (**
-  * @vue/reactivity v3.4.23
+  * @vue/reactivity v3.4.24
   * (c) 2018-present Yuxi (Evan) You and Vue contributors
   * @license MIT
   **)
 
 @vue/runtime-core/dist/runtime-core.esm-bundler.js:
   (**
-  * @vue/runtime-core v3.4.23
+  * @vue/runtime-core v3.4.24
   * (c) 2018-present Yuxi (Evan) You and Vue contributors
   * @license MIT
   **)
@@ -11416,7 +11418,7 @@ export {
 
 @vue/runtime-dom/dist/runtime-dom.esm-bundler.js:
   (**
-  * @vue/runtime-dom v3.4.23
+  * @vue/runtime-dom v3.4.24
   * (c) 2018-present Yuxi (Evan) You and Vue contributors
   * @license MIT
   **)
@@ -11424,9 +11426,9 @@ export {
 
 vue/dist/vue.runtime.esm-bundler.js:
   (**
-  * vue v3.4.23
+  * vue v3.4.24
   * (c) 2018-present Yuxi (Evan) You and Vue contributors
   * @license MIT
   **)
 */
-//# sourceMappingURL=chunk-O4XWQMLZ.js.map
+//# sourceMappingURL=chunk-5JJANY24.js.map
