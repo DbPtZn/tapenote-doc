@@ -16,7 +16,7 @@ hero:
       link: /guide/doc/index
     - theme: alt
       text: 试用
-      link: http://110.41.83.140/#/login
+      link: /client
 
 features:
   - title: 简易
