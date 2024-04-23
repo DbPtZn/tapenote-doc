@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import * as posts from '../utils/post.data.mjs'
 console.log(posts)
 </script>
@@ -11,4 +11,4 @@ console.log(posts)
 
 <style scoped>
 
-</style>
+</style> -->
