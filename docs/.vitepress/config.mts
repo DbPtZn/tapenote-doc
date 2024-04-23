@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-
+// import { set_sidebar } from './gen_sidebar'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Tapenote",
@@ -25,7 +25,8 @@ export default defineConfig({
         text: '关于',
         items: [
           { text: '博客', link: '/guide/blog/index' },
-          { text: '联系方式', link: '/guide/contact/index' }
+          { text: '联系方式', link: '/guide/contact/index' },
+          // { text: '所有文章', link: '/guide/post/index' } // 暂不使用
         ]
       }
     ],

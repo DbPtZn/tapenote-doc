@@ -5,7 +5,7 @@
     <div class="tier header">核心开源技术支持</div>
     <div class="section">
       <div class="card">
-        <div>
+        <div class="">
           富文本编辑器
         </div>
         <span>

@@ -2,7 +2,9 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
-import { Divider, Support } from './components'
+import './custom.css'
+import './skip.css'
+import { Divider, Support, Post } from './components'
 import { h } from 'vue'
 
 export default {
@@ -15,6 +17,6 @@ export default {
   },
   async enhanceApp({ app }) {
     // register your custom global components
-    app.component('Divider', Divider).component('Support', Support)
+    app.component('Divider', Divider).component('Support', Support).component('Post', Post)
   }
 } satisfies Theme
