@@ -16,7 +16,7 @@ hero:
       link: /guide/doc/index
     - theme: alt
       text: 试用
-      link: /client
+      link: https://42.193.131.67/client
 
 features:
   - title: 简易
