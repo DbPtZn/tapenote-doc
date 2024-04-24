@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 // import { set_sidebar } from './gen_sidebar'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Tapenote",
+  title: "胶记",
   lang: 'zh-CN',
   description: [
     'tapenote',
@@ -60,8 +60,8 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Released under the GPL3.0 License.',
-      copyright: 'Copyright © 2024-present Tapenote'
+      message: 'Released under the GPL3.0 License',
+      copyright: 'Copyright © 2024-present Tapenote | <a href="https://beian.miit.gov.cn">粤ICP备2024238845号</a>'
     },
 
     socialLinks: [
