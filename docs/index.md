@@ -16,7 +16,7 @@ hero:
       link: /guide/doc/index
     - theme: alt
       text: 试用
-      link: https://www.tapenote.cn/client
+      link: https://www.tapenote.cn/client/
 
 features:
   - title: 简易
