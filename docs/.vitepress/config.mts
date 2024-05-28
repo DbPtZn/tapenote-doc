@@ -60,7 +60,7 @@ export default defineConfig({
     ],
     footer: {
       message: 'Copyright © 2024-present Tapenote',
-      copyright: '<a style="text-decoration:none;" href="https://beian.mps.gov.cn/#/query/webSearch?code=44051502000595" rel="noreferrer" target="_blank">粤公网安备44051502000595</a> | <a href="https://beian.miit.gov.cn" style="text-decoration:none;">粤ICP备2024238845号</a>'
+      copyright: '<a style="text-decoration:none;" href="https://beian.mps.gov.cn/#/query/webSearch?code=44051502000595" rel="noreferrer" target="_blank"><img style="display:inline;height:16px;width:16px;margin-right:3px;margin-bottom:2px;" src="./备案图标.png" alt="police" style="vertical-align:middle;" />粤公网安备44051502000595</a> | <a href="https://beian.miit.gov.cn" style="text-decoration:none;">粤ICP备2024238845号</a>'
     },
 
     socialLinks: [
