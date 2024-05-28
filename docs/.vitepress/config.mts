@@ -58,10 +58,9 @@ export default defineConfig({
         ]
       }
     ],
-
     footer: {
-      message: 'Released under the GPL3.0 License',
-      copyright: 'Copyright © 2024-present Tapenote | <a href="https://beian.miit.gov.cn">粤ICP备2024238845号</a>'
+      message: 'Copyright © 2024-present Tapenote',
+      copyright: '<a style="text-decoration:none;" href="https://beian.mps.gov.cn/#/query/webSearch?code=44051502000595" rel="noreferrer" target="_blank">粤公网安备44051502000595</a> | <a href="https://beian.miit.gov.cn" style="text-decoration:none;">粤ICP备2024238845号</a>'
     },
 
     socialLinks: [
