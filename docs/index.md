@@ -13,10 +13,10 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /guide/doc/index
+      link: https://www.tapenote.cn
     - theme: alt
-      text: 试用
-      link: https://www.tapenote.cn/client/
+      text: 文档
+      link: /guide/doc/index
 
 features:
   - title: 简易

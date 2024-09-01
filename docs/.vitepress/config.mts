@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 // import { set_sidebar } from './gen_sidebar'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "胶记",
+  title: "Tapenote 笔记映画",
   lang: 'zh-CN',
   description: [
     'tapenote',
@@ -12,10 +12,10 @@ export default defineConfig({
     'Flipped Classroom',
   ].join(' '),
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo2.png' }],
   ],
   themeConfig: {
-    siteTitle: 'Tapenote',
+    siteTitle: '笔记映画',
     logo: '/favicon.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -24,7 +24,7 @@ export default defineConfig({
       { 
         text: '关于',
         items: [
-          { text: '博客', link: '/guide/blog/index' },
+          { text: '博客', link: 'https://platform.tapenote.cn/#/PXYkjC8e' },
           { text: '联系方式', link: '/guide/contact/index' },
           // { text: '所有文章', link: '/guide/post/index' } // 暂不使用
         ]
@@ -59,7 +59,7 @@ export default defineConfig({
       }
     ],
     footer: {
-      message: 'Copyright © 2024-present Tapenote',
+      message: 'Copyright © 2024-Present Tapenote',
       copyright: '<a style="text-decoration:none;" href="https://beian.mps.gov.cn/#/query/webSearch?code=44051502000595" rel="noreferrer" target="_blank"><img style="display:inline;height:16px;width:16px;margin-right:3px;margin-bottom:2px;" src="./备案图标.png" alt="police" style="vertical-align:middle;" />粤公网安备44051502000595</a> | <a href="https://beian.miit.gov.cn" style="text-decoration:none;">粤ICP备2024238845号</a>'
     },
 
