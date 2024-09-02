@@ -7,9 +7,9 @@ hero:
   text: "简易 H5 微课制作工具"
   tagline: 符合直觉，简单易上手，无需专业视频剪辑知识
   image: 
-    src: '/logo1.png'
+    src: '/logo.svg'
     alt: VitePress
-  logo: '/favicon.svg'
+  logo: '/logo.svg'
   actions:
     - theme: brand
       text: 开始

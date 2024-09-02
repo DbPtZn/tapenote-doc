@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 // import { set_sidebar } from './gen_sidebar'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Tapenote 笔记映画",
+  title: "筆記映畫 Tapenote",
   lang: 'zh-CN',
   description: [
     'tapenote',
@@ -12,11 +12,11 @@ export default defineConfig({
     'Flipped Classroom',
   ].join(' '),
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo2.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' }],
   ],
   themeConfig: {
-    siteTitle: '笔记映画',
-    logo: '/favicon.svg',
+    siteTitle: '筆記映畫',
+    logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '文档', link: '/guide/doc/index' },
