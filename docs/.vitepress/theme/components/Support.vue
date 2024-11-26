@@ -2,7 +2,7 @@
 
 <template>
   <div class="support">
-    <div class="tier header">核心开源技术支持</div>
+    <div class="tier header">特别感谢开源技术支持</div>
     <div class="section">
       <div class="card">
         <div class="">

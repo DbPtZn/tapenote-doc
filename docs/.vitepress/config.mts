@@ -12,7 +12,7 @@ export default defineConfig({
     'Flipped Classroom',
   ].join(' '),
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
   ],
   themeConfig: {
     siteTitle: '筆記映畫',
